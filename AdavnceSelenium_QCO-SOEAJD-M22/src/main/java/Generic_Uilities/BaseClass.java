@@ -37,11 +37,11 @@ public class BaseClass {
 	@BeforeClass(groups = {"smoke","Regression","sanity"})
 	public void bc() throws Throwable {
 		File_Utility flib = new File_Utility();
-	//	String BROWSER = flib.getKeyAndValuePair("browser");
+		String BROWSER = flib.getKeyAndValuePair("browser");
 	
 		
 		//reading from cmd/Jenkins
-		String BROWSER = System.getProperty("browser");
+	//	String BROWSER = System.getProperty("browser");
 	
 		if (BROWSER.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
@@ -61,14 +61,14 @@ public class BaseClass {
 	public void bm() throws Throwable {
 		System.out.println("login to application");
 		File_Utility flib = new File_Utility();
-//		String URL = flib.getKeyAndValuePair("url");
-//		String USERNAME = flib.getKeyAndValuePair("username");
-//		String PASSWORD = flib.getKeyAndValuePair("password");
+		String URL = flib.getKeyAndValuePair("url");
+		String USERNAME = flib.getKeyAndValuePair("username");
+		String PASSWORD = flib.getKeyAndValuePair("password");
 		
 		//reading from cmd/Jenkins
-		String URL = System.getProperty("url");
-		String USERNAME = System.getProperty("username");
-		String PASSWORD = System.getProperty("password");
+//		String URL = System.getProperty("url");
+//		String USERNAME = System.getProperty("username");
+//		String PASSWORD = System.getProperty("password");
 		
 //	public void bm(String URL,String USERNAME,String PASSWORD) throws Throwable {
 		driver.get(URL);
